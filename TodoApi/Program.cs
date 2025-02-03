@@ -23,13 +23,13 @@ builder.Services.AddDbContext<ToDoDbContext>(options =>
 
 var app = builder.Build();
 app.UseCors("AllowAll");
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 
-
+app.MapGet("/", () =>"hello its work!!!" );
 // הגדרת ה-routes
 app.MapGet("/items", async (ToDoDbContext db) =>
 {
