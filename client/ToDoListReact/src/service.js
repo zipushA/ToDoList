@@ -1,5 +1,5 @@
 import axios from 'axios';
-axios.defaults.baseURL = "http://localhost:5023";
+axios.defaults.baseURL = "https://todolistserver-xit0.onrender.com";
 
 // הוספת interceptor לשגיאות
 axios.interceptors.response.use(
