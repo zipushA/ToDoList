@@ -66,3 +66,4 @@ app.MapDelete("/items/{id}", async (int id, ToDoDbContext db) =>
 });
 
 app.Run();
+//"server=localhost;user=root;password=0556737478za;database=ToDoDB"
