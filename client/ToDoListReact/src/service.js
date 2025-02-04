@@ -1,6 +1,6 @@
 import axios from 'axios';
 import config from './config';
-//axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+
 
 // הוספת interceptor לשגיאות
 axios.interceptors.response.use(
