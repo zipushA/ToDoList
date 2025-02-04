@@ -14,8 +14,12 @@ axios.interceptors.response.use(
 //const apiUrl = "http://localhost:5023"
 export default {
   getTasks: async () => {
-    const result = await axios . get ( ` ${ config.apiUrl } /items` );  
-    return result.data;
+    try {
+      const result = await axios.get(`${config.apiUrl}/items`);
+      return result.data;
+    } catch (err) {
+      console.error("Error", err);
+    }
   },
 
   addTask: async(name)=>{
