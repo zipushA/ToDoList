@@ -33,7 +33,7 @@ app.MapGet("/", () =>"hello its work!!!" );
 // הגדרת ה-routes
 app.MapGet("/items", async (ToDoDbContext db) =>
 {
-    Console.WriteLine("GET /items called")
+    Console.WriteLine("GET /items called");
     Console.WriteLine("the get works");
     return await db.Items.ToListAsync(); // שליפת כל המשימות
 });
