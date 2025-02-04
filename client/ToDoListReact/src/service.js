@@ -1,5 +1,6 @@
 import axios from 'axios';
-axios.defaults.baseURL = "https://todolistserver-xit0.onrender.com";
+import config from './config';
+//axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 // הוספת interceptor לשגיאות
 axios.interceptors.response.use(
@@ -11,16 +12,15 @@ axios.interceptors.response.use(
 );
 
 //const apiUrl = "http://localhost:5023"
-
 export default {
   getTasks: async () => {
-    const result = await axios.get(`/items`)    
+    const result = await axios . get ( ` ${ config.apiUrl } /items` );  
     return result.data;
   },
 
   addTask: async(name)=>{
     console.log('addTask', name)
-    const result = await axios.post(`/items`, { name });
+    const result = await axios.post(`${config.apiUrl}/items`, { name });
     return result.data;
   },
 
@@ -33,12 +33,12 @@ export default {
   setCompleted: async (id, name, isComplete) => {
     console.log('setCompleted', { id, name, isComplete });
     const updatedTask = { name, isComplete };
-    await axios.put(`/items/${id}`, updatedTask);
+    await axios.put(`${config.apiUrl}/items/${id}`, updatedTask);
     return { id, isComplete };
   },
   deleteTask:async(id)=>{
     console.log('deleteTask')
-    const result = await axios.delete(`/items/${id}`);
+    const result = await axios.delete(`${config.apiUrl}/items/${id}`);
     return result.data;
   }
 };
