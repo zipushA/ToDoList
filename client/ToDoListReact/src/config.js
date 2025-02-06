@@ -1,5 +1,5 @@
 const config = {
-    apiUrl: process.env.REACT_APP_URL.trim() // כתובת ה-API
+    apiUrl: process.env.REACT_APP_URL // כתובת ה-API
   };
   
   export default config;
